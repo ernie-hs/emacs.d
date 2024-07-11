@@ -12,6 +12,10 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+(global-auto-revert-mode t)
+
+(setq confirm-kill-processes nil)
+
 ;; init package stuff
 
 (require 'package)
