@@ -12,6 +12,10 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+(global-auto-revert-mode t)
+
+(setq confirm-kill-processes nil)
+
 ;; init package stuff
 
 (require 'package)
@@ -59,13 +63,22 @@
 (use-package cider
   :ensure t)
 
+(use-package markdown-mode
+  :ensure t)
+
+(use-package projectile
+  :ensure t)
+
+(use-package magit
+  :ensure t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
+   '(magit projectile markdown-mode rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
