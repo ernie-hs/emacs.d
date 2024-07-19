@@ -1,6 +1,7 @@
 *~
 \#*\#
 *.elc
+*.eld
 
 elpa/
 auto-save-list/

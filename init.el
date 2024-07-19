@@ -9,12 +9,19 @@
 
 (column-number-mode)
 (global-display-line-numbers-mode t)
+(global-hl-line-mode t)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (global-auto-revert-mode t)
 
+(setq enable-remote-dir-locals t)
+
 (setq confirm-kill-processes nil)
+
+(setq-default indent-tabs-mode nil)
+
+(setq create-lockfiles nil)
 
 ;; init package stuff
 
@@ -53,7 +60,8 @@
 
 (use-package clojure-mode
   :ensure t
-  :init (add-hook 'clojure-mode-hook 'parinfer-rust-mode)
+  :init (add-hook 'clojure-mode-hook 'subword-mode)
+        (add-hook 'clojure-mode-hook 'parinfer-rust-mode)
         (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 	(add-hook 'cider-repl-mode-hook 'parinfer-rust-mode))
 
@@ -64,13 +72,23 @@
 (use-package cider
   :ensure t)
 
+(use-package ido-completing-read+
+  :ensure t
+  :init (ido-mode t)
+        (ido-ubiquitous-mode t)
+        (ido-everywhere t))
+
+(use-package projectile
+  :ensure t
+  :init (projectile-mode 1))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
+   '(ido-completing-read+ rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
