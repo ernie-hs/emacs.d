@@ -1,6 +1,6 @@
-#my emacs config
+# my emacs config
 
 for it is it...
 
-and it is.
+not very disciplined...
 
