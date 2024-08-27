@@ -31,6 +31,8 @@
 			 ("org" . "https://orgmode.org/elpa/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
 
+(setq package-check-signature nil)
+
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -88,7 +90,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ido-completing-read+ rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
+   '(projectile use-package ido-completing-read+ rainbow-delimiters cider clojure-mode-extra-font-locking clojure-mode parinfer-rust-mode doom-modeline zenburn-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
